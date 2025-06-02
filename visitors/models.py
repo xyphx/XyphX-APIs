@@ -1,3 +1,12 @@
+# models.py
 from django.db import models
 
-# Create your models here.
+class Visitor(models.Model):
+    total = models.IntegerField()
+    portfolio = models.IntegerField()
+    get_warranty = models.IntegerField()
+    
+
+    class Meta:
+        managed = False  
+        db_table = 'visitors'  
