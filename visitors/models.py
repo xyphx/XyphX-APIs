@@ -8,5 +8,5 @@ class Visitor(models.Model):
     
 
     class Meta:
-        managed = False  
+        managed = True  
         db_table = 'visitors'  

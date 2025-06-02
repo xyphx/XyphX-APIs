@@ -6,15 +6,25 @@ from visitors.models import Visitor
 class TotalVisitorsView(APIView):
     def get(self, request):
         visitor = Visitor.objects.first()
-        return JsonResponse({'total': visitor.total})
+        data = {
+            'total': visitor.total,
+            'portfolio': visitor.portfolio,
+            'get_warranty': visitor.get_warranty,
+        }
+        return JsonResponse(data, status=200)
 
-class PortfolioView(APIView):
-    def get(self, request):
+class UpdatePortfolioView(APIView):
+    def put(self, request):
         visitor = Visitor.objects.first()
-        return JsonResponse({'portfolio': visitor.portfolio})
+        visitor.portfolio += 1
+        visitor.save()
+        return JsonResponse({'message': 'portfolio visitors updated successfully'}, status=200)
 
-class GetWarrantyView(APIView):
-    def get(self, request):
+    
+class UpdateGetWarrantyView(APIView):
+    def put(self, request):
         visitor = Visitor.objects.first()
-        return JsonResponse({'getWarranty': visitor.get_warranty})
+        visitor.get_warranty += 1
+        visitor.save()
+        return JsonResponse({'message': 'getWarranty visitors updated successfully'}, status=200)
 
