@@ -20,11 +20,15 @@ class ApplyView(APIView):
 
             subject = "New Application Received"
             from_email = "xyphx.company@gmail.com"
-            to_emails = ["sidhartpunalur@gmail.com", "gayathry.rs22@gmail.com"]
+            to_emails = ["sidharthpunalur@gmail.com", "gayathry.rs22@gmail.com"]
 
             email = EmailMultiAlternatives(subject, "", from_email, to_emails)
             email.attach_alternative(html_content, "text/html")
-            email.send()
+            try:
+                email.send()
+            except Exception as e:
+                 print("Email sending failed:", e)
+
 
             return Response({"message": "Application submitted successfully."}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
