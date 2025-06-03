@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #1e1e2f;
+      color: #dcdcff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .card {
+      background-color: #2b2b3c;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #6a0dad;
+    }
+    h2 {
+      color: #bb86fc;
+    }
+    p span {
+      font-weight: bold;
+      color: #d6bcfa;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>New Application Received</h2>
+    <p><strong class="highlight">Name:</strong> {{ name }}</p>
+    <p><strong class="highlight">Organization:</strong> {{ org_name }}</p>
+    <p><strong class="highlight">Technical Interests:</strong> {{ tech_interest }}</p>
+    <p><strong class="highlight">Phone:</strong> {{ phone }}</p>
+    <p><strong class="highlight">Email:</strong> {{ email }}</p>
+    {% if portfolio %}
+    <p><span>Portfolio:</span> <a href="{{ portfolio }}" style="color:#bb86fc;">{{ portfolio }}</a></p>
+    {% endif %}
+  </div>
+</body>
+</html>

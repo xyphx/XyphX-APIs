@@ -21,7 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'visitors',
-    'maintenance'
+    'maintenance',
+    'apply',
 ]
 
 MIDDLEWARE = [
@@ -36,10 +37,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'xyphx.urls'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
