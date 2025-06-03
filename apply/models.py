@@ -9,5 +9,8 @@ class Apply(models.Model):
     portfolio = models.URLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        db_table = 'applications' 
+
     def __str__(self):
-        return f"{self.name} from {self.org_name}"
+        return self.name
