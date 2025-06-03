@@ -1,16 +1,16 @@
 # Use an official Python image from DockerHub
-FROM python:3.10-slim
+FROM python:3.10.12
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Set work directory
 WORKDIR /app
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    netcat gcc postgresql-client \
+    netcat-openbsd gcc postgresql-client \
     && apt-get clean
 
 # Install Python dependencies
