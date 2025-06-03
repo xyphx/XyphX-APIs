@@ -1,4 +1,4 @@
-from decouple import config
+from decouple import config, Csv
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-6)zq16$d_9z*23wl-$j#wywmm4#ls0a4f5-*=9-o&&0^n%)-7d
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
 
 APPEND_SLASH=False
 # Application definition
