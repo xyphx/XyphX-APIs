@@ -19,7 +19,7 @@ class ApplyView(APIView):
 
             subject = "XyphX - New Application Received"
             from_email = "xyphx.company@gmail.com"
-            to_emails = ["sidharthpunalur@gmail.com", "gayathry.rs22@gmail.com"]
+            to_emails = ["sidharthpunalur@gmail.com", "gayathry.rs22@gmail.com", "surajpmnr@gmail.com"]
 
             email = EmailMultiAlternatives(subject, "", from_email, to_emails)
             email.attach_alternative(application_html_content, "text/html")
