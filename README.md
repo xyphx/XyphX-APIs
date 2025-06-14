@@ -1,6 +1,6 @@
 # 🧠 XyphX API
 
-The **XyphX API** is the core backend that powers all services and products across the XyphX ecosystem — from GET-Warranty to the Admin Panel to user-facing apps. It follows a microservice-friendly architecture, with token-based authentication and modular service integration.
+The **XyphX API** is the core backend that powers all services and products across the XyphX ecosystem —  The Admin Panel to user-facing apps. It follows a microservice-friendly architecture, with token-based authentication and modular service integration.
 
 ---
 
